@@ -1,14 +1,19 @@
+import Card from "../UI/Card"
+import styles from './Users.module.css'
+
 const Users = (props) => {
     const getUsers = () => {
-        return props.allusers.map((user) => {
-            return <div>
-                {user.username} ({user.age} years old)
-            </div>    
-        })
+        return <ul className={styles.ul}>
+            {props.allusers.map((user) => {
+                return <li className={styles.li}>
+                    {user.username} ({user.age} years old)
+                </li>
+            })}
+        </ul>
     }
-    return <div style={{margin: '1px'}}>
+    return <Card myClass={styles.users}>
         {getUsers()}
-    </div>
+    </Card>    
 }
 
 export default Users
