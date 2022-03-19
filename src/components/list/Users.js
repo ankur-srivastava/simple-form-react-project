@@ -5,7 +5,7 @@ const Users = (props) => {
     const getUsers = () => {
         return <ul className={styles.ul}>
             {props.allusers.map((user) => {
-                return <li className={styles.li}>
+                return <li className={styles.li} key={user.id}>
                     {user.username} ({user.age} years old)
                 </li>
             })}

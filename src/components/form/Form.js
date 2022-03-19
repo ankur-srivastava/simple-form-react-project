@@ -15,9 +15,10 @@ const Form  = (props) => {
         if(+age < 0) {
             return
         }
+        const id = Math.floor(Math.random() * 100)+4;
         setName('')
         setAge('')
-        props.callAddUser({username: name, age})
+        props.callAddUser({id, username: name, age})
     }
 
     const handleName = (e) => {
